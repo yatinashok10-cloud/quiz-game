@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- Start page -->
+  <section id="start">
+    <div class="logo" aria-hidden="true">💻</div>
+    <h1 class="title">Computer Quiz</h1>
+    <p class="sub">Test what you know about computer hardware</p>
+    <p id="ask" class="ask"></p>
+    <div class="choices">
+      <button id="yes" type="button" class="play">Yes, let's play!</button>
+      <button id="no" type="button" class="ghost">Not now</button>
+    </div>
+    <p id="nomsg" class="nomsg" aria-live="polite"></p>
+    <p class="author">Created by Yatin</p>
+  </section>
+
+  <!-- Score and progress bar (shown during the quiz) -->
+  <div id="hud" hidden>
+    <div class="top"><span id="count"></span><span id="score-live">Score: 0</span></div>
+    <div class="bar"><div id="fill"></div></div>
+  </div>
+
+  <!-- Questions -->
+  <section id="quiz" hidden>
+    <h1 id="q"></h1>
+    <input id="a" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer">
+    <button id="go" type="button">check answer</button>
+    <p id="fb" aria-live="polite"></p>
+  </section>
+
+  <!-- Results -->
+  <section id="result" hidden>
+    <p id="summary"></p>
+    <p id="pct"></p>
+    <p id="msg"></p>
+    <button id="again" type="button">play again</button>
+    <p class="author">Created by Yatin</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
