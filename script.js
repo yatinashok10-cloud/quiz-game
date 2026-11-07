@@ -92,7 +92,6 @@ function shuffle(list) {
   return a;
 }
 
-/* ---------- Start page ---------- */
 
 function typeText(el, text) {
   if (reduceMotion) { el.textContent = text; return; }
@@ -137,7 +136,7 @@ $("no").onclick = () => {
   replay($("no"), "wobble");
 };
 
-/* ---------- Quiz ---------- */
+
 function optionsBox() {
   let box = $("opts");
   if (!box) {
@@ -209,7 +208,6 @@ function pick(btn, option) {
   $("go").focus();
 }
 
- /* ---------- Results ---------- */
 
 function showResult() {
   $("quiz").hidden = true;

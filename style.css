@@ -20,7 +20,7 @@ body {
   padding: 20px;
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  /* Change these colours to change the background */
+
   background: linear-gradient(135deg, #1e1b4b, #4c1d95, #0e7490, #1e1b4b);
   background-size: 400% 400%;
   animation: drift 18s ease infinite;
@@ -41,7 +41,6 @@ main {
   animation: cardIn .6s ease;
 }
 
-/* ---------- Floating computer icons ---------- */
 .float {
   position: fixed;
   bottom: -60px;
@@ -51,7 +50,6 @@ main {
   animation: floatUp linear infinite;
 }
 
-/* ---------- Start page ---------- */
 #start { text-align: center; }
 #start.leave { animation: leave .3s ease forwards; }
 
@@ -119,7 +117,6 @@ main {
   font-size: .9rem;
 }
 
-/* ---------- Quiz ---------- */
 .top {
   display: flex;
   justify-content: space-between;
@@ -197,7 +194,6 @@ button:active { transform: scale(.96); }
 #fb.bad { color: var(--bad); }
 #fb.pop { animation: pop .35s; }
 
-/* ---------- Results ---------- */
 #summary { margin: 0 0 6px; color: var(--muted); font-size: 1.1rem; }
 #pct { margin: 0 0 6px; font-size: 1.9rem; font-weight: 800; }
 #msg { margin: 0; font-weight: 600; }
@@ -212,7 +208,6 @@ button:active { transform: scale(.96); }
   animation: fall linear forwards;
 }
 
-/* ---------- Animations ---------- */
 @keyframes drift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes cardIn { from { opacity: 0; transform: translateY(20px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes leave { to { opacity: 0; transform: scale(.95); } }
@@ -238,7 +233,7 @@ button:active { transform: scale(.96); }
   .ask::after { display: none; }
 }
 
-/* ---------- Answer options ---------- */
+
 #opts { display: grid; gap: 10px; }
 
 .opt {
