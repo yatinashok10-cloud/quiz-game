@@ -10,35 +10,56 @@
 <main>
   
   <section id="start">
-    <div class="logo" aria-hidden="true">💻</div>
+    <div class="logo" aria-hidden="true">&lt;/&gt;</div>
     <h1 class="title">Computer Quiz</h1>
-    <p class="sub">Test what you know about computer hardware</p>
+    <p class="sub">Computers, science, maths and general knowledge</p>
     <p id="ask" class="ask"></p>
-    <div class="choices">
+
+    <div id="first" class="choices">
       <button id="yes" type="button" class="play">Yes, let's play!</button>
       <button id="no" type="button" class="ghost">Not now</button>
     </div>
     <p id="nomsg" class="nomsg" aria-live="polite"></p>
+
+    
+    <div id="setup" hidden>
+      <p class="label">How many questions?</p>
+      <div id="counts" class="chips"></div>
+
+      <label class="label" for="subject">Subject</label>
+      <select id="subject"></select>
+
+      <button id="begin" type="button" class="wide">Start quiz</button>
+    </div>
+
     <p class="author">Created by Yatin</p>
   </section>
 
+ 
   <div id="hud" hidden>
     <div class="top"><span id="count"></span><span id="score-live">Score: 0</span></div>
     <div class="bar"><div id="fill"></div></div>
   </div>
 
+ 
   <section id="quiz" hidden>
     <h1 id="q"></h1>
-    <input id="a" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer">
-    <button id="go" type="button">check answer</button>
+    <div id="opts"></div>
     <p id="fb" aria-live="polite"></p>
+    <button id="go" type="button" hidden>next question</button>
   </section>
 
+ 
   <section id="result" hidden>
     <p id="summary"></p>
     <p id="pct"></p>
     <p id="msg"></p>
-    <button id="again" type="button">play again</button>
+    <p class="label">Score by subject</p>
+    <ul id="by"></ul>
+    <div class="row">
+      <button id="again" type="button">play again</button>
+      <button id="menu" type="button" class="ghost">change settings</button>
+    </div>
     <p class="author">Created by Yatin</p>
   </section>
 </main>
