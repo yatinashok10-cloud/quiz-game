@@ -5,7 +5,7 @@ A quiz game with 56 questions on computers, physics, chemistry, biology, maths, 
 <img width="1920" height="999" alt="Screenshot 2026-11-07 200845" src="https://github.com/user-attachments/assets/8f1b31ef-eb9b-4ec0-920c-c3a42c5f291f" />
 
 
-Play it here: https://quizformiddlegraders.netlify.app/
+Play it here: https://yquizgame.netlify.app/
 
 ## What it does
 
