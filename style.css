@@ -2,9 +2,9 @@
   --paper: #fffdf7;
   --ink: #101828;
   --muted: #4b5563;
-  --accent: #ffd23f;
+  --accent: #fff44f;
   --good: #7ae0a8;
-  --bad: #ff8fa3;
+  --bad: #ff7ac0;
   --field: #eef2ff;
 }
 
@@ -19,11 +19,14 @@ body {
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  background-color: #1e40af;
+  background-color: #0047ab;
   background-image:
+    radial-gradient(circle at 10% 15%, #ff1493 0 16vmax, transparent 16vmax),
+    radial-gradient(circle at 92% 88%, #fff44f 0 20vmax, transparent 20vmax),
     linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: auto, auto, 32px 32px, 32px 32px;
+  background-attachment: fixed;
 }
 
 [hidden] { display: none !important; }
@@ -142,7 +145,7 @@ select {
   border: 3px solid var(--ink);
   border-radius: 4px;
 }
-select:focus-visible { outline: 3px solid #1e40af; outline-offset: 3px; }
+select:focus-visible { outline: 3px solid #0047ab; outline-offset: 3px; }
 
 .wide { width: 100%; margin-top: 22px; }
 
@@ -174,12 +177,13 @@ select:focus-visible { outline: 3px solid #1e40af; outline-offset: 3px; }
 #fill {
   height: 100%;
   width: 0;
-  background: repeating-linear-gradient(45deg, var(--accent) 0 8px, #f5b700 8px 16px);
+  background: repeating-linear-gradient(45deg, var(--accent) 0 8px, #ff1493 8px 16px);
   border-right: 3px solid var(--ink);
   transition: width .5s ease;
 }
 
 h1 { margin: 0 0 20px; font-size: 1.5rem; line-height: 1.3; }
+.rtitle { margin: 0 0 12px; font-size: 1.5rem; }
 
 .enter { animation: slide .35s ease; }
 
@@ -209,7 +213,7 @@ button:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 5px 
 button:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
 
 input:focus-visible,
-button:focus-visible { outline: 3px solid #1e40af; outline-offset: 3px; }
+button:focus-visible { outline: 3px solid #0047ab; outline-offset: 3px; }
 
 #opts { display: grid; gap: 12px; }
 
@@ -223,7 +227,7 @@ button:focus-visible { outline: 3px solid #1e40af; outline-offset: 3px; }
 .opt.right { background: var(--good); }
 .opt.wrong { background: var(--bad); animation: shake .4s; }
 
-#go { width: 100%; }
+#go, #stop { width: 100%; }
 
 #fb { min-height: 1.5em; margin: 16px 0 0; font-weight: 700; }
 #fb.ok { color: #15803d; }
@@ -261,7 +265,6 @@ button:focus-visible { outline: 3px solid #1e40af; outline-offset: 3px; }
   z-index: 10;
   animation: fall linear forwards;
 }
-
 
 @keyframes cardIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @keyframes leave { to { opacity: 0; transform: scale(.95); } }

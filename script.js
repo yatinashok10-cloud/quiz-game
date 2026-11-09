@@ -1,6 +1,6 @@
+"use strict";
 
 const Q = [
-  
   ["Computers", "What does RAM stand for?", "Random Access Memory", ["Read Access Memory", "Rapid Access Memory", "Run Access Memory"]],
   ["Computers", "What does ROM stand for?", "Read Only Memory", ["Random Only Memory", "Read Output Memory", "Run Only Memory"]],
   ["Computers", "What does PSU stand for?", "Power Supply Unit", ["Power Storage Unit", "Primary Supply Unit", "Processor Supply Unit"]],
@@ -12,7 +12,6 @@ const Q = [
   ["Computers", "Who is known as the father of the computer?", "Charles Babbage", ["Bill Gates", "Steve Jobs", "Tim Berners-Lee"]],
   ["Computers", "How many bits are in one byte?", "8", ["4", "16", "10"]],
 
-  
   ["Physics", "What is the SI unit of force?", "Newton", ["Joule", "Watt", "Pascal"]],
   ["Physics", "What is the approximate speed of light?", "3 x 10^8 m/s", ["3 x 10^6 m/s", "3 x 10^10 m/s", "3 x 10^4 m/s"]],
   ["Physics", "What is the approximate acceleration due to gravity on Earth?", "9.8 m/s^2", ["1.6 m/s^2", "3.7 m/s^2", "98 m/s^2"]],
@@ -20,7 +19,6 @@ const Q = [
   ["Physics", "What is the SI unit of electric current?", "Ampere", ["Volt", "Ohm", "Coulomb"]],
   ["Physics", "Which law is written as V = IR?", "Ohm's law", ["Newton's law", "Faraday's law", "Boyle's law"]],
 
-  
   ["Chemistry", "What is the chemical symbol for gold?", "Au", ["Ag", "Gd", "Go"]],
   ["Chemistry", "What is the atomic number of carbon?", "6", ["12", "8", "4"]],
   ["Chemistry", "What is the pH of pure water at 25 degrees C?", "7", ["0", "14", "10"]],
@@ -28,7 +26,6 @@ const Q = [
   ["Chemistry", "What is the chemical formula of table salt?", "NaCl", ["KCl", "NaOH", "CaCl2"]],
   ["Chemistry", "Who is credited with creating the periodic table?", "Dmitri Mendeleev", ["John Dalton", "Niels Bohr", "Antoine Lavoisier"]],
 
-  
   ["Biology", "Which part of the cell is called the powerhouse of the cell?", "Mitochondria", ["Nucleus", "Ribosome", "Golgi apparatus"]],
   ["Biology", "Which blood group is the universal donor?", "O negative", ["AB positive", "A positive", "B negative"]],
   ["Biology", "What is the process by which plants make their food?", "Photosynthesis", ["Respiration", "Transpiration", "Digestion"]],
@@ -36,7 +33,6 @@ const Q = [
   ["Biology", "Which vitamin does the skin make from sunlight?", "Vitamin D", ["Vitamin A", "Vitamin C", "Vitamin K"]],
   ["Biology", "What does DNA stand for?", "Deoxyribonucleic acid", ["Dioxyribonucleic acid", "Deoxyribonitric acid", "Diribonucleic acid"]],
 
-  
   ["Maths", "What is the approximate value of pi?", "3.14", ["2.71", "1.62", "3.41"]],
   ["Maths", "What is the square root of 144?", "12", ["14", "16", "11"]],
   ["Maths", "What is the sum of the angles in a triangle?", "180 degrees", ["90 degrees", "270 degrees", "360 degrees"]],
@@ -46,7 +42,6 @@ const Q = [
   ["Maths", "What is the value of log base 10 of 1000?", "3", ["2", "10", "1000"]],
   ["Maths", "What is the area of a circle with radius r?", "pi * r^2", ["2 * pi * r", "pi * r", "2 * pi * r^2"]],
 
-  
   ["Geography", "What is the capital of Australia?", "Canberra", ["Sydney", "Melbourne", "Perth"]],
   ["Geography", "Which is the largest ocean on Earth?", "Pacific Ocean", ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"]],
   ["Geography", "Which is the highest mountain peak in the world?", "Mount Everest", ["K2", "Kangchenjunga", "Makalu"]],
@@ -54,7 +49,6 @@ const Q = [
   ["Geography", "Which is the largest state in India by area?", "Rajasthan", ["Madhya Pradesh", "Maharashtra", "Uttar Pradesh"]],
   ["Geography", "Which imaginary line divides Earth into the Northern and Southern Hemispheres?", "Equator", ["Prime Meridian", "Tropic of Cancer", "International Date Line"]],
 
-  
   ["History", "Who was the first Prime Minister of India?", "Jawaharlal Nehru", ["Mahatma Gandhi", "Sardar Patel", "B. R. Ambedkar"]],
   ["History", "In which year did India gain independence?", "1947", ["1942", "1950", "1935"]],
   ["History", "Who wrote the Indian national anthem?", "Rabindranath Tagore", ["Bankim Chandra Chatterjee", "Sarojini Naidu", "Muhammad Iqbal"]],
@@ -62,13 +56,11 @@ const Q = [
   ["History", "Who is known as the Father of the Indian Constitution?", "B. R. Ambedkar", ["Jawaharlal Nehru", "Rajendra Prasad", "Sardar Patel"]],
   ["History", "Who was the first President of India?", "Dr. Rajendra Prasad", ["Dr. S. Radhakrishnan", "Dr. Zakir Husain", "Jawaharlal Nehru"]],
 
-  
   ["English", "Which word is a synonym of 'happy'?", "Joyful", ["Gloomy", "Angry", "Tired"]],
   ["English", "What is the plural of 'child'?", "Children", ["Childs", "Childes", "Childrens"]],
   ["English", "Who wrote 'Romeo and Juliet'?", "William Shakespeare", ["Charles Dickens", "Jane Austen", "Mark Twain"]],
   ["English", "Which of these words is an adjective?", "Beautiful", ["Quickly", "Run", "Table"]],
 
-  
   ["General Knowledge", "Which planet is known as the Red Planet?", "Mars", ["Venus", "Jupiter", "Saturn"]],
   ["General Knowledge", "Which is the largest planet in our solar system?", "Jupiter", ["Saturn", "Neptune", "Earth"]],
   ["General Knowledge", "How many continents are there?", "7", ["5", "6", "8"]],
@@ -79,24 +71,28 @@ const Q = [
   ["General Knowledge", "Which organisation launched Chandrayaan-3?", "ISRO", ["NASA", "DRDO", "ESA"]]
 ];
 
-const COUNTS = [5, 10, 20, "all"];
+const COUNTS = [5, 10, 20, "all", "endless"];
 
-let S = [];                       
-let i = 0, score = 0, streak = 0; 
+let S = [];
+let i = 0, score = 0, streak = 0, answered = 0;
 let checked = false;
-let want = 10;                    
-let by = {};                      
+let want = 10;
+let by = {};
+let endless = false;
+let qpool = [];
+let bank = [];
+let gens = [];
+let seen = new Set();
 
 const $ = id => document.getElementById(id);
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
+const rint = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 
 function replay(el, cls) {
   el.classList.remove(cls);
   void el.offsetWidth;
   el.classList.add(cls);
 }
-
 
 function shuffle(list) {
   const a = list.slice();
@@ -108,6 +104,63 @@ function shuffle(list) {
 }
 
 
+function wrongNums(c, fmt) {
+  fmt = fmt || String;
+  const out = [];
+  shuffle([1, -1, 2, -2, 10, -10, 3, -3, 5, -5]).forEach(o => {
+    const v = c + o;
+    if (v > 0 && out.length < 3) out.push(fmt(v));
+  });
+  return out;
+}
+
+function numQ(subject, text, c, fmt) {
+  fmt = fmt || String;
+  return [subject, text, fmt(c), wrongNums(c, fmt)];
+}
+
+const MATHS_GENS = [
+  () => { const a = rint(10, 99), b = rint(10, 99); return numQ("Maths", "What is " + a + " + " + b + "?", a + b); },
+  () => { const a = rint(20, 99), b = rint(1, a - 1); return numQ("Maths", "What is " + a + " - " + b + "?", a - b); },
+  () => { const a = rint(2, 15), b = rint(2, 12); return numQ("Maths", "What is " + a + " x " + b + "?", a * b); },
+  () => { const p = [5, 10, 15, 20, 25, 30, 50][rint(0, 6)], n = rint(1, 20) * 20; return numQ("Maths", "What is " + p + "% of " + n + "?", p * n / 100); },
+  () => { const a = rint(2, 20); return numQ("Maths", "What is " + a + " squared?", a * a); },
+  () => { const a = rint(2, 20); return numQ("Maths", "What is the square root of " + a * a + "?", a); },
+  () => { const x = rint(2, 12), a = rint(2, 9), b = rint(1, 20); return numQ("Maths", "If " + a + "x + " + b + " = " + (a * x + b) + ", what is x?", x); }
+];
+
+const COMP_GENS = [
+  () => { const n = rint(1, 63); return numQ("Computers", "What is the decimal number " + n + " in binary?", n, v => v.toString(2)); },
+  () => { const n = rint(1, 63); return numQ("Computers", "What is the binary number " + n.toString(2) + " in decimal?", n); },
+  () => { const n = rint(10, 255); return numQ("Computers", "What is the decimal number " + n + " in hexadecimal?", n, v => v.toString(16).toUpperCase()); },
+  () => { const n = rint(2, 16); return numQ("Computers", "How many bits are in " + n + " bytes?", n * 8); }
+];
+
+function gensFor(subject) {
+  if (subject === "all") return MATHS_GENS.concat(COMP_GENS);
+  if (subject === "Maths") return MATHS_GENS;
+  if (subject === "Computers") return COMP_GENS;
+  return [];
+}
+
+function nextEndless() {
+  if (gens.length && Math.random() < 0.5) {
+    let q;
+    for (let t = 0; t < 15; t++) {
+      q = gens[rint(0, gens.length - 1)]();
+      if (!seen.has(q[1])) break;
+    }
+    seen.add(q[1]);
+    return q;
+  }
+  if (!bank.length) bank = shuffle(qpool);
+  return bank.pop();
+}
+
+function progress(n) {
+  if (!endless) return n / S.length * 100;
+  return n > 0 && n % 10 === 0 ? 100 : (n % 10) * 10;
+}
 
 function typeText(el, text) {
   if (reduceMotion) { el.textContent = text; return; }
@@ -123,6 +176,7 @@ function floatIcons() {
   for (let n = 0; n < 16; n++) {
     const s = document.createElement("span");
     s.className = "float";
+    s.setAttribute("aria-hidden", "true");
     s.textContent = bits[n % bits.length];
     s.style.left = Math.random() * 100 + "vw";
     s.style.fontSize = (16 + Math.random() * 20) + "px";
@@ -150,7 +204,7 @@ function buildSetup() {
     const b = document.createElement("button");
     b.type = "button";
     b.className = "chip" + (n === want ? " on" : "");
-    b.textContent = n === "all" ? "All" : n;
+    b.textContent = n === "all" ? "All" : n === "endless" ? "\u221E Endless" : n;
     b.onclick = () => {
       want = n;
       box.querySelectorAll(".chip").forEach(c => c.classList.remove("on"));
@@ -174,14 +228,24 @@ function showSetup() {
 
 function startGame() {
   const subject = $("subject").value;
-  const pool = subject === "all" ? Q : Q.filter(q => q[0] === subject);
-  const total = want === "all" ? pool.length : Math.min(want, pool.length);
+  qpool = subject === "all" ? Q : Q.filter(q => q[0] === subject);
+  endless = want === "endless";
 
-  S = shuffle(pool).slice(0, total);
   i = 0;
   score = 0;
   streak = 0;
+  answered = 0;
   by = {};
+  seen = new Set();
+  bank = [];
+
+  if (endless) {
+    gens = gensFor(subject);
+    S = [];
+  } else {
+    const total = want === "all" ? qpool.length : Math.min(want, qpool.length);
+    S = shuffle(qpool).slice(0, total);
+  }
 
   $("start").hidden = true;
   $("result").hidden = true;
@@ -206,20 +270,21 @@ $("no").onclick = () => {
 
 $("begin").onclick = startGame;
 
-
 function render() {
-  if (i >= S.length) return showResult();
+  if (!endless && i >= S.length) return showResult();
+  if (endless && i >= S.length) S.push(nextEndless());
   const [subject, text, correct, wrong] = S[i];
 
   $("result").hidden = true;
   $("quiz").hidden = false;
-  $("count").textContent = "Question " + (i + 1) + " of " + S.length + " (" + subject + ")";
+  $("count").textContent = "Question " + (i + 1) + (endless ? "" : " of " + S.length) + " (" + subject + ")";
   $("score-live").textContent = "Score: " + score;
-  $("fill").style.width = (i / S.length * 100) + "%";
+  $("fill").style.width = progress(i) + "%";
   $("q").textContent = text;
   $("fb").textContent = "";
   $("fb").className = "";
   $("go").hidden = true;
+  $("stop").hidden = !endless;
   checked = false;
 
   const box = $("opts");
@@ -240,6 +305,7 @@ function render() {
 function pick(btn) {
   if (checked) return;
   checked = true;
+  answered++;
 
   const [subject, , correct] = S[i];
   const ok = btn.dataset.value === correct;
@@ -267,8 +333,8 @@ function pick(btn) {
   fb.className = ok ? "ok" : "bad";
   replay(fb, "pop");
 
-  $("fill").style.width = ((i + 1) / S.length * 100) + "%";
-  $("go").textContent = i === S.length - 1 ? "see results" : "next question";
+  $("fill").style.width = progress(i + 1) + "%";
+  $("go").textContent = !endless && i === S.length - 1 ? "see results" : "next question";
   $("go").hidden = false;
   $("go").focus();
 }
@@ -281,7 +347,7 @@ document.addEventListener("keydown", e => {
 });
 
 $("go").onclick = () => { i++; render(); };
-
+$("stop").onclick = showResult;
 
 function showResult() {
   $("quiz").hidden = true;
@@ -289,9 +355,13 @@ function showResult() {
   replay($("result"), "enter");
   $("count").textContent = "Done";
   $("fill").style.width = "100%";
-  $("summary").textContent = "you got " + score + " out of " + S.length + " correct!";
 
-  const target = score / S.length * 100;
+  const n = answered;
+  $("summary").textContent = n
+    ? "you got " + score + " out of " + n + " correct!"
+    : "you did not answer any questions.";
+
+  const target = n ? score / n * 100 : 0;
   const start = performance.now();
   (function step(t) {
     const p = Math.min((t - start) / 900, 1);
@@ -300,7 +370,8 @@ function showResult() {
   })(start);
 
   $("msg").textContent =
-    score === S.length ? "perfect score!" :
+    !n ? "play again when you're ready!" :
+    score === n ? "perfect score!" :
     target >= 90 ? "outstanding!" :
     target >= 60 ? "nice work!" : "keep practising!";
 
@@ -316,15 +387,16 @@ function showResult() {
     list.appendChild(li);
   });
 
-  if (score === S.length) confetti();
+  if (n > 0 && score === n) confetti();
 }
 
 function confetti() {
   if (reduceMotion) return;
-  const colors = ["#ffd23f", "#7ae0a8", "#ff8fa3", "#5b9cf0", "#d879e0"];
+  const colors = ["#fff44f", "#ff1493", "#0047ab", "#ffffff", "#ff7ac0"];
   for (let n = 0; n < 60; n++) {
     const s = document.createElement("span");
     s.className = "confetti";
+    s.setAttribute("aria-hidden", "true");
     s.style.left = Math.random() * 100 + "vw";
     s.style.background = colors[n % colors.length];
     s.style.animationDuration = (2 + Math.random() * 2) + "s";
